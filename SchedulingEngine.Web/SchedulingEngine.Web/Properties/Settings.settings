@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SchedulingEngine.Web.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ContentApplicationName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SchedulingEngine.Web</Value>
+    </Setting>
+    <Setting Name="ContentUserId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">me</Value>
+    </Setting>
+    <Setting Name="PegasysApiResourse_RequestForConfirmation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Nomination-Web-Api/api/request-for-confirmations/{pipeline_utility_gasday_cycle}</Value>
+    </Setting>
+    <Setting Name="PegasysApiResourse_NaesbEvent" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Nomination-Web-Api/api/naesb-events/{id}</Value>
+    </Setting>
+    <Setting Name="PegasysCredentials" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">xxxx</Value>
+    </Setting>
+    <Setting Name="PegasysHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://xxxx/webusers/w33780</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

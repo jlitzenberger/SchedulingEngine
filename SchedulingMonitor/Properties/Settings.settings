@@ -1,0 +1,51 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SchedulingMonitor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ContentApplicationName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SchedulingMonitor</Value>
+    </Setting>
+    <Setting Name="RemedyUri" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/v1/incidents/</Value>
+    </Setting>
+    <Setting Name="SmtpPort" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="RemedyAssignedSupportGroup" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CO - Work Management Process</Value>
+    </Setting>
+    <Setting Name="RemedyClientService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">IT - Work Management</Value>
+    </Setting>
+    <Setting Name="RemedyCompany" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WEC Business Services</Value>
+    </Setting>
+    <Setting Name="RemedyImpact" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">4-Minor/Localized</Value>
+    </Setting>
+    <Setting Name="RemedyUrgency" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">4-Low</Value>
+    </Setting>
+    <Setting Name="ContentUserId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">xxxxx</Value>
+    </Setting>
+    <Setting Name="RemedyUriCredentials" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">xxxxx</Value>
+    </Setting>
+    <Setting Name="RemedyUriHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://xxxxx/enterprise/service-management</Value>
+    </Setting>
+    <Setting Name="SmtpHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">xxxxx</Value>
+    </Setting>
+    <Setting Name="EmailTo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">xxxxxm</Value>
+    </Setting>
+    <Setting Name="EmailFrom" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SchedulingMonitor@no-reply.com</Value>
+    </Setting>
+    <Setting Name="EmailCc" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

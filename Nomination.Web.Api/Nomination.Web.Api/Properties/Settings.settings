@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Nomination.Web.Api.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Environment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tst</Value>
+    </Setting>
+    <Setting Name="NaesbOutboundFileUnc" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\xxxxx\DATA\WM\wm_open\Jason\EDI\_EDI_Outbound\</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

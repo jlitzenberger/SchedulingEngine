@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA239F58-2C27-4CF4-A382-B8B3C4E66816}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nomination.BusinessLayer</RootNamespace>
+    <AssemblyName>Nomination.BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Base.cs" />
+    <Compile Include="Common\ModelFactory.cs" />
+    <Compile Include="Interfaces\IConfirmationResponseEventRepository.cs" />
+    <Compile Include="Interfaces\IHttpClient.cs" />
+    <Compile Include="Interfaces\IRequestForConfirmationEventRepository.cs" />
+    <Compile Include="Interfaces\Naesb\INaesbEventMonitorRepository.cs" />
+    <Compile Include="Interfaces\Naesb\INaesbEventNotificationRepository.cs" />
+    <Compile Include="Interfaces\Naesb\INaesbEventProcessRepository.cs" />
+    <Compile Include="Interfaces\Naesb\INaesbEventRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRequestForConfirmationRepository.cs" />
+    <Compile Include="Interfaces\IResourse.cs" />
+    <Compile Include="Interfaces\IScheduledQuantityEventRepository.cs" />
+    <Compile Include="Interfaces\Naesb\INaesbPipelineRepository.cs" />
+    <Compile Include="Interfaces\Naesb\INaesbRepository.cs" />
+    <Compile Include="Interfaces\Naesb\INaesbUtilityRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ConfirmationResponse\Event\ConfirmationResponseEventGet.cs" />
+    <Compile Include="Services\ConfirmationResponse\Event\ConfirmationResponseEventCreate.cs" />
+    <Compile Include="Services\ConfirmationResponse\Event\ConfirmationResponseEventProcess.cs" />
+    <Compile Include="Services\ConfirmationResponse\Event\IConfirmationResponseEventCreate.cs" />
+    <Compile Include="Services\ConfirmationResponse\Event\IConfirmationResponseEventGet.cs" />
+    <Compile Include="Services\ConfirmationResponse\Event\IConfirmationResponseEventProcess.cs" />
+    <Compile Include="Services\ConfirmationResponse\Naesb\INaesbConfirmationResponseGet.cs" />
+    <Compile Include="Services\ConfirmationResponse\Naesb\NaesbConfirmationResponseGet.cs" />
+    <Compile Include="Services\Incident\IncidentCreate.cs" />
+    <Compile Include="Services\Naesb\INaesbEventGetRfcsToProcess.cs" />
+    <Compile Include="Services\Naesb\INaesbEventMonitorGet.cs" />
+    <Compile Include="Services\Naesb\INaesbEventMonitorGetEventMonitors.cs" />
+    <Compile Include="Services\Naesb\INaesbEventMonitorUpdate.cs" />
+    <Compile Include="Services\Naesb\INaesbEventNotificationCreate.cs" />
+    <Compile Include="Services\Naesb\INaesbEventNotificationGetNotDelivered.cs" />
+    <Compile Include="Services\Naesb\INaesbEventNotificationUpdate.cs" />
+    <Compile Include="Services\Naesb\INaesbEventProcessCreate.cs" />
+    <Compile Include="Services\Naesb\INaesbEventProcessChange.cs" />
+    <Compile Include="Services\Naesb\INaesbPipelineGetByPipeline.cs" />
+    <Compile Include="Services\Naesb\INaesbUtilityGetByUtility.cs" />
+    <Compile Include="Services\Naesb\NaesbPipelineGetByPipeline.cs" />
+    <Compile Include="Services\Naesb\NaesbUtilityGetByUtility.cs" />
+    <Compile Include="Services\QuickResponse\Naesb\INaesbQuickResponseCreate.cs" />
+    <Compile Include="Services\QuickResponse\Naesb\INaesbQuickResponseGet.cs" />
+    <Compile Include="Services\QuickResponse\Naesb\INaesbQuickResponseHeaderGet.cs" />
+    <Compile Include="Services\QuickResponse\Naesb\NaesbQuickResponseCreate.cs" />
+    <Compile Include="Services\QuickResponse\Naesb\NaesbQuickResponseGet.cs" />
+    <Compile Include="Services\Naesb\NaesbEventGetRfcsToProcess.cs" />
+    <Compile Include="Services\Naesb\NaesbEventProcessCreate.cs" />
+    <Compile Include="Services\ConfirmationResponse\Naesb\INaesbConfirmationResponseCreate.cs" />
+    <Compile Include="Services\RequestForConfirmation\Event\IRequestForConfirmationEventCreate.cs" />
+    <Compile Include="Services\RequestForConfirmation\Event\IRequestForConfirmationEventGet.cs" />
+    <Compile Include="Services\RequestForConfirmation\Event\RequestForConfirmationEventCreate.cs" />
+    <Compile Include="Services\RequestForConfirmation\Event\RequestForConfirmationEventGet.cs" />
+    <Compile Include="Services\ScheduledQuantity\Naesb\INaesbOperatorScheduledQuantitiesCreate.cs" />
+    <Compile Include="Services\Naesb\INaesbEventProcessError.cs" />
+    <Compile Include="Services\Naesb\INaesbEventProcessGet.cs" />
+    <Compile Include="Services\Naesb\INaesbEventProcessRfcCompletion.cs" />
+    <Compile Include="Services\Naesb\INaesbEventProcessUpdate.cs" />
+    <Compile Include="Services\Naesb\INaesbEventUpdate.cs" />
+    <Compile Include="Services\Naesb\INaesbPipelineGet.cs" />
+    <Compile Include="Services\RequestForConfirmation\Naesb\INaesbRequestForConfirmationGet.cs" />
+    <Compile Include="Services\RequestForConfirmation\Naesb\INaesbRequestForConfirmationHeaderGet.cs" />
+    <Compile Include="Services\RequestForConfirmation\Naesb\INaesbRequestForConfirmationCreate.cs" />
+    <Compile Include="Services\Naesb\INaesbUtilityGet.cs" />
+    <Compile Include="Services\Naesb\NaesbEventMonitorGet.cs" />
+    <Compile Include="Services\Naesb\NaesbEventMonitorGetEventMonitors.cs" />
+    <Compile Include="Services\Naesb\NaesbEventMonitorUpdate.cs" />
+    <Compile Include="Services\Naesb\NaesbEventNotificationCreate.cs" />
+    <Compile Include="Services\Naesb\NaesbEventNotificationGetNotDelivered.cs" />
+    <Compile Include="Services\Naesb\NaesbEventNotificationUpdate.cs" />
+    <Compile Include="Services\Naesb\NaesbEventProcessChange.cs" />
+    <Compile Include="Services\Naesb\INaesbEventChange.cs" />
+    <Compile Include="Services\Naesb\INaesbEventCreate.cs" />
+    <Compile Include="Services\Naesb\INaesbEventGet.cs" />
+    <Compile Include="Services\Naesb\INaesbEventGetList.cs" />
+    <Compile Include="Services\Naesb\NaesbEventChange.cs" />
+    <Compile Include="Services\Naesb\NaesbEventCreate.cs" />
+    <Compile Include="Services\Naesb\NaesbEventGet.cs" />
+    <Compile Include="Services\Naesb\NaesbEventGetList.cs" />
+    <Compile Include="Services\ConfirmationResponse\Naesb\NaesbConfirmationResponseCreate.cs" />
+    <Compile Include="Services\ScheduledQuantity\Naesb\INaesbOperatorScheduledQuantitiesGet.cs" />
+    <Compile Include="Services\ScheduledQuantity\Naesb\NaesbOperatorScheduledQuantitiesCreate.cs" />
+    <Compile Include="Services\Naesb\NaesbEventProcessError.cs" />
+    <Compile Include="Services\Naesb\NaesbEventProcessGet.cs" />
+    <Compile Include="Services\Naesb\NaesbEventProcessRfcCompletion.cs" />
+    <Compile Include="Services\Naesb\NaesbEventProcessUpdate.cs" />
+    <Compile Include="Services\Naesb\NaesbEventUpdate.cs" />
+    <Compile Include="Services\Naesb\NaesbPipelineGet.cs" />
+    <Compile Include="Services\RequestForConfirmation\Naesb\NaesbRequestForConfirmationGet.cs" />
+    <Compile Include="Services\RequestForConfirmation\Naesb\NaesbRequestForConfirmationHeaderGet.cs" />
+    <Compile Include="Services\RequestForConfirmation\Naesb\NaesbRequestForConfirmationCreate.cs" />
+    <Compile Include="Services\Naesb\NaesbUtilityGet.cs" />
+    <Compile Include="Services\QuickResponse\Naesb\NaesbQuickResponseHeaderGet.cs" />
+    <Compile Include="Services\RequestForConfirmation\Event\IRequestForConfirmationEventChange.cs" />
+    <Compile Include="Services\RequestForConfirmation\_IRequestForConfirmationCreate.cs" />
+    <Compile Include="Services\RequestForConfirmation\IRequestForConfirmationGet.cs" />
+    <Compile Include="Services\RequestForConfirmation\Event\RequestForConfirmationEventChange.cs" />
+    <Compile Include="Services\RequestForConfirmation\_RequestForConfirmationCreate.cs" />
+    <Compile Include="Services\RequestForConfirmation\RequestForConfirmationGet.cs" />
+    <Compile Include="Services\Requestors\BaseRequestor.cs" />
+    <Compile Include="Services\Requestors\BaseRequestorSettings.cs" />
+    <Compile Include="Services\Requestors\HttpClientHandler.cs" />
+    <Compile Include="Services\Requestors\IncidentRequestor.cs" />
+    <Compile Include="Services\ScheduledQuantity\Event\IScheduledQuantityEventGet.cs" />
+    <Compile Include="Services\ScheduledQuantity\Event\IScheduledQuantityEventProcess.cs" />
+    <Compile Include="Services\ScheduledQuantity\Event\IScheduledQuantityEventCreate.cs" />
+    <Compile Include="Services\ScheduledQuantity\Naesb\NaesbOperatorScheduledQuantitiesGet.cs" />
+    <Compile Include="Services\ScheduledQuantity\Event\ScheduledQuantityEventCreate.cs" />
+    <Compile Include="Services\ScheduledQuantity\Event\ScheduledQuantityEventGet.cs" />
+    <Compile Include="Services\ScheduledQuantity\Event\ScheduledQuantityEventProcess.cs" />
+    <Compile Include="Services\ServiceSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CS.Common\CS.Common.csproj">
+      <Project>{a97eb924-e161-4242-8bab-7cd6d720b84c}</Project>
+      <Name>CS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nomination.Domain\Nomination.Domain.csproj">
+      <Project>{7ebf0939-b957-4401-b160-70d0ad41fb30}</Project>
+      <Name>Nomination.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

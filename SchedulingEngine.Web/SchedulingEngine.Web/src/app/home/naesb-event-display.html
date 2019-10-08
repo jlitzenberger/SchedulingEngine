@@ -1,0 +1,124 @@
+﻿
+<div>
+    <select [(ngModel)]="eventType"
+            (change)="getNaesbEventsByPipeline($event.target.value, pipeline, cycle, utility)">
+        <option></option>
+        <option>RFC</option>
+        <option>CR</option>
+        <option>OSQ</option>
+        <option>QR</option>
+    </select>
+    <select [(ngModel)]="cycle"
+             (change)="getNaesbEventsByPipeline(eventType, pipeline, $event.target.value, utility)">
+        <option></option>
+        <option>TIM</option>
+        <option>EVE</option>
+        <option>ID1</option>
+        <option>ID2</option>
+        <option>ID3</option>
+    </select>
+    <select [(ngModel)]="pipeline"
+             (change)="getNaesbEventsByPipeline(eventType, $event.target.value, cycle, utility)">
+        <option></option>
+        <option>NGPL</option>
+        <option>NNG</option>
+        <option>GRD</option>
+        <option>ANR</option>
+        <option>VEC</option>
+    </select>
+    <select [(ngModel)]="utility"
+            (change)="getNaesbEventsByPipeline(eventType, pipeline, cycle, $event.target.value)">
+        <option></option>
+        <option>PGL</option>
+        <option>NSG</option>
+        <option>WE</option>
+        <option>MRC</option>
+    </select>
+</div>
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Type</th>
+            <th scope="col">Cycle</th>
+            <th scope="col">Pipe</th>
+            <th scope="col">Util</th>
+            <th scope="col">ProcessTime</th>
+            <th scope="col">hd7</th>
+            <th scope="col">hd8</th>
+            <th scope="col">hd9</th>
+            <th scope="col">hd10</th>
+            <th scope="col">hd11</th>
+            <th scope="col">hd12</th>
+            <th scope="col">user</th>
+            <th scope="col">button</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="naesbEvents!=null">
+        <tr *ngFor="let naesbEvent of naesbEvents">
+            <td>{{naesbEvent.Id}}</td>
+            <td>{{naesbEvent.FileType}}</td>
+            <td>
+                <!--<input type="text"
+                       [(ngModel)]="naesbEvent.Cycle"
+                       (input)="updateValue($event)" />-->
+                <select [(ngModel)]="naesbEvent.Cycle"
+                        (change)="updateValue($event)">
+                    <option>TIM</option>
+                    <option>EVE</option>
+                    <option>ID1</option>
+                    <option>ID2</option>
+                    <option>ID3</option>
+                </select>
+            </td>
+            <td>{{naesbEvent.Pipeline}}</td>
+            <td>{{naesbEvent.Utility}}</td>
+            <td>{{naesbEvent.ProcessedTime}}</td>
+            <td>{{naesbEvent.CycleStart}}</td>
+            <td>{{naesbEvent.CycleEnd}}</td>
+            <td>{{naesbEvent.OffSet}}</td>
+            <td>{{naesbEvent.On}}</td>
+            <td>
+                <!--<select (change)="onOff($event)">
+                    <option *ngFor="let i of bool"
+                            [value]="naesbEvent.On"
+                            [selected]="naesbEvent.On">
+                            {{i}}
+                    </option>
+                </select>-->
+                <select [(ngModel)]="naesbEvent.On"
+                         (change)="onOff($event)">
+                    <option [ngValue]="false">false</option>
+                    <option [ngValue]="true">true</option>
+                </select>
+            </td>
+            <td>{{naesbEvent.LastUpdateTime}}</td>
+            <td>{{naesbEvent.LastUpdateUserId}}</td>
+            <td>
+                <button (click)="update(naesbEvent.Id, naesbEvent )">
+                    Update
+                </button>
+            </td>
+            <!--<td>
+                <input type="text"
+                   [(ngModel)]="naesbEvent.Id"
+                    (input)="updateValue($event)">
+            </td>-->
+            <!--<td>
+            <button (click)="myClickFunction(naesbEvent)">
+                Click Me
+            </button>
+        </td>-->
+        </tr>
+    </tbody>
+</table>
+
+<!--<button (click)="myClickFunction(naesbEvents[0])">
+    Click Me0
+</button>
+<button (click)="myClickFunction(naesbEvents[1] )">
+    Click Me1
+</button>-->
+<!--<button (click)="save(naesbEvents[0] )">
+    Save
+</button>-->

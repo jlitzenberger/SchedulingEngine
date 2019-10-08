@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3455A9F3-715D-426A-A9DD-581328133DC8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nomination.Persistence</RootNamespace>
+    <AssemblyName>Nomination.Persistence</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Extensions.ExpressionMapping, Version=1.0.5.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.Extensions.ExpressionMapping.1.0.5\lib\net45\AutoMapper.Extensions.ExpressionMapping.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ModelFactory.cs" />
+    <Compile Include="ConfirmationResponse\ConfirmationResponseEventRepository.cs" />
+    <Compile Include="Naesb\NaesbEventMonitorRepository.cs" />
+    <Compile Include="Naesb\NaesbEventNotificationRepository.cs" />
+    <Compile Include="Naesb\NaesbEventProcessRespository.cs" />
+    <Compile Include="Naesb\NaesbEventRepository.cs" />
+    <Compile Include="Naesb\NaesbPipelineRepository.cs" />
+    <Compile Include="Naesb\NaesbRepository.cs" />
+    <Compile Include="Naesb\NaesbUtilityRepository.cs" />
+    <Compile Include="PegasysContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestForConfirmation\Dto\RequestForConfirmationDto.cs" />
+    <Compile Include="RequestForConfirmation\RequestForConfirmationEventRepository.cs" />
+    <Compile Include="RequestForConfirmation\RequestForConfirmationRepository.cs" />
+    <Compile Include="ScheduledQuantity\ScheduledQuantityEventRepository.cs" />
+    <Compile Include="Shared\Repository.cs" />
+    <Compile Include="tb_company.cs" />
+    <Compile Include="tb_naesb_event.cs" />
+    <Compile Include="tb_naesb_event_monitor.cs" />
+    <Compile Include="tb_naesb_event_notifications.cs" />
+    <Compile Include="tb_naesb_event_process.cs" />
+    <Compile Include="tb_naesb_pipelines.cs" />
+    <Compile Include="tb_naesb_transaction_detail.cs" />
+    <Compile Include="tb_naesb_transaction_master.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CS.Common\CS.Common.csproj">
+      <Project>{a97eb924-e161-4242-8bab-7cd6d720b84c}</Project>
+      <Name>CS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nomination.BusinessLayer\Nomination.BusinessLayer.csproj">
+      <Project>{fa239f58-2c27-4cf4-a382-b8b3c4e66816}</Project>
+      <Name>Nomination.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nomination.Domain\Nomination.Domain.csproj">
+      <Project>{7ebf0939-b957-4401-b160-70d0ad41fb30}</Project>
+      <Name>Nomination.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
